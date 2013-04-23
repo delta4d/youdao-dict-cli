@@ -5,9 +5,6 @@
 require 'open-uri'
 require 'rexml/document'
 
-# URL prefix and suffix defination
-PREFIX  = 'http://dict.youdao.com/search?q='
-SUFFIX  = '&xmlDetail=true&doctype=xml'
 # Linux terminal color codes
 RESET   = "\e[0m"
 BLACK   = "\e[30m"
@@ -17,6 +14,11 @@ YELLOW  = "\e[33m"
 BLUE    = "\e[34m"
 MAGENTA = "\e[35m"
 CYAN    = "\e[36m"
+# Prompt
+PROMPT	= ">> "
+# URL prefix and suffix defination
+PREFIX  = 'http://dict.youdao.com/search?q='
+SUFFIX  = '&xmlDetail=true&doctype=xml'
 # Exit codes defination
 EXIT    = "bye"
 
@@ -31,6 +33,7 @@ end
 
 def translate
 	while true
+		print PROMPT
 		word = gets.chomp.force_encoding('ASCII-8BIT')
 		url = PREFIX + word + SUFFIX
 		xml = URI.parse(URI::encode(url)).read
