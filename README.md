@@ -3,7 +3,7 @@ youdao-dict-cli
 
 A simple [youdao dict](http://dict.youdao.com/) cli ver.
 Function is very limited, translating from English to Chinese works fine.
-But it is a good way to practice ruby and gems, I may add more functions when I come up with some good ideas and muchmore ruby skills.
+For me it is a good way to practice ruby and gems, I may add more functions when I come up with some good ideas and much more ruby skills.
 
 installation
 ------------
