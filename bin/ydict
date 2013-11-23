@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+
+require 'dict'
+
+# Linux terminal color codes
+RESET   = "\e[0m"
+BLACK   = "\e[30m"
+RED     = "\e[31m"
+GREEN   = "\e[32m"
+YELLOW  = "\e[33m"
+BLUE    = "\e[34m"
+MAGENTA = "\e[35m"
+CYAN    = "\e[36m"
+# Prompt
+PROMPT  = ">> "
+# Exit codes defination
+EXIT    = "bye"
+
+def usage
+  puts <<-END.gsub(/^\s*\|/, '')
+    |Usage:
+    |#{File.basename($0).to_s} [arg]
+    |  no arguments: starting translating! enter bye to exit the program
+    |  any arguments: display this help
+  END
+end
+
+if ARGV.length > 0
+  usage
+else
+  while true
+    print PROMPT
+    word = gets.chomp.force_encoding('ASCII-8BIT')
+    if EXIT == word
+      puts "#{CYAN}bye ^_^#{RESET}"
+      exit 0
+    else
+      translate(word) { |t| puts "#{RED}#{t[0]} #{GREEN}#{t[1..-1].join}#{RESET}" }
+    end
+  end
+end
