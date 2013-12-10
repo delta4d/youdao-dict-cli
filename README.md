@@ -25,3 +25,8 @@ Usage:
 $ ydict
 >> # type the word, or 'bye' to exit
 ```
+
+doc
+---
+* [gempage](https://rubygems.org/gems/youdao_dict_cli)
+* [omniref](http://omniref.com/docs/ruby/gems/youdao_dict_cli-0.0.0)
